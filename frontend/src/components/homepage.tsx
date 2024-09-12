@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import ProjectCard from "./projectcard";
 import TechnologyItem from "./technologycard";
@@ -14,6 +14,9 @@ function HomePage() {
   const ref3 = useRef(null);
   const isInView3 = useInView(ref3, { once: true });
 
+  const [language, isLanguageInView] = useState(false);
+  const [tools, isToolsInView] = useState(false);
+
   const languagesAndFrameworks = [
     { name: "Java", image: "../public/java.svg" },
     { name: "Python", image: "../public/python.svg" },
@@ -24,7 +27,7 @@ function HomePage() {
     { name: "CSS", image: "../public/css.svg" },
     { name: "SQL", image: "../public/sql.svg" },
     { name: "Golang", image: "../public/golang.svg" },
-    { name: "React", image: "../public/react.svg" },
+    { name: "React", image: "../public/technologies/react.svg" },
     { name: "Next", image: "../public/nextjs.svg" },
     { name: "Node", image: "../public/nodejs.svg" },
     { name: "MongoDB", image: "../public/mongodb.svg" },
@@ -62,7 +65,7 @@ function HomePage() {
       <motion.div
         initial={{ x: "0%", opacity: 0 }}
         animate={{ x: "10%", opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ delay : 1.5 , duration: 2 }}
       >
         <div className="font-poppins text-white h-auto mt-72 mb-80 text-left">
           <p style={{ color: "#ADBACA" }} className="text-4xl">
@@ -88,11 +91,20 @@ function HomePage() {
         >
           About Me!
           <div className="mt-10 w-96 text-white text-lg">
-            <p>
-              I am a software engineer with experience in full-stack web
-              development. I have a passion for creating applications that
-              provide value to users. I am currently a student at UC Davis
-              studying computer science.
+            <p className = "mb-5">
+              Hi! I am currently a 4th year CS student at UC Davis!
+              I just finished up my work as a Software Engineer Intern at AT&T where I worked at 
+              the AT&T Headquarters in Dallas, Texas.
+            </p>
+            <p className ="mb-5">
+              I have extensive experience with creating applications and products! 
+              Over the course of 4 years at my internships, clubs, classes, and hackathons, I have created
+              multiple products that range from full-stack, ML models, and mobile applications.
+            </p>
+            <p className ="mb-5">
+              Outside of school and work, I love to stay fit! 
+              You'll find me either running around my neighborhood at midnight, lifting weights at the gym, or in the pool swimming some laps! 
+              (Add me on Strava!!!)
             </p>
           </div>
           <div className="mt-10 flex flex-col">
@@ -122,25 +134,29 @@ function HomePage() {
             color: "#ADBACA",
           }}
         >
-          Projects
+          Projects! 
           <div className="mt-10 flex flex-row">
             <div className="mr-10">
               <ProjectCard
                 title="Volt"
-                description="Volt is a full-stack web application that allows users to create, update, and delete their own flashcards. Users can also study their flashcards using a spaced repetition algorithm."
-                githubLink="a"
+                description="Volt simplifies SMS management by wrapping multiple SaaS platforms like Twilio. We will create a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
+                mediumArticle="https://codelabdavis.medium.com/volt-1dffc4ef911a"
               />
             </div>
             <div className="mr-10">
               <ProjectCard
                 title="Playground"
                 description="Playground is a full-stack web application that allows users to create, update, and delete their own playgrounds. Users can also view other users' playgrounds and like them."
+                githubLink="https://github.com/Codelab-Davis/Playground"
+                mediumArticle="https://codelabdavis.medium.com/playground-762b36da1806"
               />
             </div>
             <div className="mr-10">
               <ProjectCard
                 title="PassPal"
                 description="PassPal is a full-stack web application that allows users to create, update, and delete their own passwords. Users can also view other users' passwords and like them."
+                githubLink="https://github.com/Codelab-Davis/password-manager"
+                mediumArticle="https://codelabdavis.medium.com/passpal-9e46496ce71e"
               />
             </div>
           </div>
@@ -149,13 +165,25 @@ function HomePage() {
               <ProjectCard
                 title="Davis Dining Commons"
                 description="Davis Dining Commons is a full-stack web application that allows users to view the menu for the dining commons at UC Davis."
+                githubLink="https://github.com/HansonKLau/DDC"
               />
             </div>
             <div className="mr-10">
-              <ProjectCard title="Boxdup" description="WIP" />
+              <ProjectCard
+                title="AggieReview"
+                description="We built a web platform for students to leave constructive, unbiased reviews of professors and courses."
+                githubLink="https://github.com/HansonKLau/DDC"
+              />
             </div>
             <div className="mr-10">
-              <ProjectCard title="JasonLB" description="WIP" />
+              <ProjectCard title="Boxdup" 
+                           description="Work in Progress! Check back soon!"
+                           githubLink="https://github.com/Jason3N/boxdup" />
+            </div>
+            <div className="mr-10">
+              <ProjectCard title="JasonLB" 
+                           description="Work in Progress! Check back soon!" 
+                           githubLink="https://github.com/Jason3N/jasonLB"/>
             </div>
           </div>
         </div>
