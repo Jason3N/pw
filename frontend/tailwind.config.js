@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      'custom-background': "url('./public/bg.jpeg')", // Path to your image
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'], // Adding Poppins to the font family
+      },
+    },
   },
   plugins: [],
 }

@@ -1,11 +1,12 @@
 import './App.css'
+import HomePage from './components/homepage';
 
 function App() {
 
   return (
     <>
-      <div>
-        <h1 className = "text-xl">App</h1>
+      <div className="font-poppins bg-custom-background bg-cover bg-center min-h-screen">
+        <HomePage />
       </div>
     </>
   )
