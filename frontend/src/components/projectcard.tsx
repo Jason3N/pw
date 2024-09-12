@@ -12,17 +12,17 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ mediumArticle, githubLink, ti
   return (
     <div
       style = {{ backgroundColor: '#15181C' }} 
-      className = "w-72 h-72 m-10 rounded-lg border-1">
+      className = "w-72 h-72 m-10 rounded-lg border-1 shadow-lg">
         <div className="text-2xl p-5">
             <h3 className = "h-12 text-white mb-5">{title}</h3>
             <p className="h-28 text-xs w-60 mb-5">{description}</p>
             {githubLink && <a 
-              className = "mt-10 mr-5 border-2 rounded-lg p-1 text-xs"
+              className = "mt-10 mr-5 rounded-lg p-1 text-xs"
               href={
                 githubLink
-            }>github</a>}
+            }>github link</a>}
             {mediumArticle && <a 
-              className = "mt-10 border-2 rounded-lg p-1 text-xs"
+              className = "mt-10 rounded-lg p-1 text-xs"
               href={
                 mediumArticle
             }>medium article</a>}

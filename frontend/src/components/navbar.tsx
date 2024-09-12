@@ -33,7 +33,7 @@ const Navbar = () => {
                     initial={{ y: "0%", opacity: 0 }}
                     animate={{ y: "20%", opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
-                    className="p-2"
+                    className="p-2 shadow-lg"
                     >
                     <button style={{ color: '#ADBACA' }} > about me </button>
                 </motion.div>

@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import ProjectCard from "./projectcard";
 import TechnologyItem from "./technologycard";
 import Navbar from "./navbar.tsx";
+import ExperienceTimeline from "./timeline.tsx";
 
 function HomePage() {
   const ref1 = useRef(null);
@@ -67,30 +68,29 @@ function HomePage() {
         animate={{ x: "10%", opacity: 1 }}
         transition={{ delay : 1.5 , duration: 2 }}
       >
-        <div className="font-poppins text-white h-auto mt-72 mb-80 text-left">
-          <p style={{ color: "#ADBACA" }} className="text-4xl">
+        <div className="font-poppins text-white h-auto mt-72 mb-96 text-left">
+          <p style={{ color: "#ADBACA" }} className="font-medium text-4xl">
             Hello! My name is
           </p>
-          <p className="mt-3 text-6xl">Jason Nguyen, and I'm a...</p>
+          <p className="font-bold mt-3 text-6xl">Jason Nguyen</p>
           <p style={{ color: "#ADBACA" }} className="mt-3 text-xs">
-            (pull the lever!)
           </p>
         </div>
       </motion.div>
 
       {/* About Me Section */}
       <div className="min-h-screen pt-16" ref={ref3}>
-        <div
-          className="ml-14 mt-10 text-6xl text-left"
-          style={{
-            transform: isInView3 ? "translateY(0)" : "translateY(20px)",
-            opacity: isInView3 ? 1 : 0,
-            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
-            color: "#ADBACA",
-          }}
-        >
+          <div
+            className="font-semibold ml-14 mt-10 text-6xl text-left text-white"
+            style={{
+              transform: isInView3 ? "translateY(0)" : "translateY(20px)",
+              opacity: isInView3 ? 1 : 0,
+              transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+            }}
+          >
           About Me!
-          <div className="mt-10 w-96 text-white text-lg">
+          <div className="font-medium mt-10 w-full text-lg"
+                style = {{ color: "#ADBACA"}}>
             <p className = "mb-5">
               Hi! I am currently a 4th year CS student at UC Davis!
               I just finished up my work as a Software Engineer Intern at AT&T where I worked at 
@@ -104,11 +104,10 @@ function HomePage() {
             <p className ="mb-5">
               Outside of school and work, I love to stay fit! 
               You'll find me either running around my neighborhood at midnight, lifting weights at the gym, or in the pool swimming some laps! 
-              (Add me on Strava!!!)
             </p>
           </div>
           <div className="mt-10 flex flex-col">
-            <p className="text-3xl text-xs">
+            <p className="text-xl">
               Here are some of the technologies I work with!
             </p>
             <div className="justify-items-center grid grid-cols-5 gap-y-5 gap-x-6 w-50 mt-5 flex-row">
@@ -124,87 +123,71 @@ function HomePage() {
       </div>
 
       {/* Projects Section */}
-      <div className="min-h-screen pt-16" ref={ref1}>
-        <div
-          className="ml-14 mt-10 text-6xl text-left"
-          style={{
-            transform: isInView1 ? "translateY(0)" : "translateY(20px)",
-            opacity: isInView1 ? 1 : 0,
-            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
-            color: "#ADBACA",
-          }}
-        >
-          Projects! 
-          <div className="mt-10 flex flex-row">
-            <div className="mr-10">
-              <ProjectCard
-                title="Volt"
-                description="Volt simplifies SMS management by wrapping multiple SaaS platforms like Twilio. We will create a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
-                mediumArticle="https://codelabdavis.medium.com/volt-1dffc4ef911a"
-              />
-            </div>
-            <div className="mr-10">
-              <ProjectCard
-                title="Playground"
-                description="Playground is a full-stack web application that allows users to create, update, and delete their own playgrounds. Users can also view other users' playgrounds and like them."
-                githubLink="https://github.com/Codelab-Davis/Playground"
-                mediumArticle="https://codelabdavis.medium.com/playground-762b36da1806"
-              />
-            </div>
-            <div className="mr-10">
-              <ProjectCard
-                title="PassPal"
-                description="PassPal is a full-stack web application that allows users to create, update, and delete their own passwords. Users can also view other users' passwords and like them."
-                githubLink="https://github.com/Codelab-Davis/password-manager"
-                mediumArticle="https://codelabdavis.medium.com/passpal-9e46496ce71e"
-              />
-            </div>
-          </div>
-          <div className="mt-10 flex flex-row">
-            <div className="mr-10">
-              <ProjectCard
-                title="Davis Dining Commons"
-                description="Davis Dining Commons is a full-stack web application that allows users to view the menu for the dining commons at UC Davis."
-                githubLink="https://github.com/HansonKLau/DDC"
-              />
-            </div>
-            <div className="mr-10">
-              <ProjectCard
-                title="AggieReview"
-                description="We built a web platform for students to leave constructive, unbiased reviews of professors and courses."
-                githubLink="https://github.com/HansonKLau/DDC"
-              />
-            </div>
-            <div className="mr-10">
-              <ProjectCard title="Boxdup" 
-                           description="Work in Progress! Check back soon!"
-                           githubLink="https://github.com/Jason3N/boxdup" />
-            </div>
-            <div className="mr-10">
-              <ProjectCard title="JasonLB" 
-                           description="Work in Progress! Check back soon!" 
-                           githubLink="https://github.com/Jason3N/jasonLB"/>
-            </div>
-          </div>
+          <div className="min-h-screen pt-16" ref={ref1}>
+      <div
+        className="ml-14 mt-10 text-6xl text-left text-white"
+        style={{
+          transform: isInView1 ? "translateY(0)" : "translateY(20px)",
+          opacity: isInView1 ? 1 : 0,
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+        }}
+      >
+        Projects!
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <ProjectCard
+            title="Volt"
+            description="Volt simplifies SMS management by wrapping multiple SaaS platforms like Twilio. We will create a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
+            mediumArticle="https://codelabdavis.medium.com/volt-1dffc4ef911a"
+          />
+          <ProjectCard
+            title="Playground"
+            description="Playground is a full-stack web application that allows users to create, update, and delete their own playgrounds. Users can also view other users' playgrounds and like them."
+            githubLink="https://github.com/Codelab-Davis/Playground"
+            mediumArticle="https://codelabdavis.medium.com/playground-762b36da1806"
+          />
+          <ProjectCard
+            title="PassPal"
+            description="PassPal is a full-stack web application that allows users to create, update, and delete their own passwords. Users can also view other users' passwords and like them."
+            githubLink="https://github.com/Codelab-Davis/password-manager"
+            mediumArticle="https://codelabdavis.medium.com/passpal-9e46496ce71e"
+          />
+          <ProjectCard
+            title="Davis Dining Commons"
+            description="Davis Dining Commons is a full-stack web application that allows users to view the menu for the dining commons at UC Davis."
+            githubLink="https://github.com/HansonKLau/DDC"
+          />
+          <ProjectCard
+            title="AggieReview"
+            description="We built a web platform for students to leave constructive, unbiased reviews of professors and courses."
+            githubLink="https://github.com/HansonKLau/DDC"
+          />
+          <ProjectCard
+            title="Boxdup"
+            description="Work in Progress! Check back soon!"
+            githubLink="https://github.com/Jason3N/boxdup"
+          />
+          <ProjectCard
+            title="JasonLB"
+            description="Work in Progress! Check back soon!"
+            githubLink="https://github.com/Jason3N/jasonLB"
+          />
         </div>
       </div>
+    </div>
+
 
       {/* Experiences Section */}
       <div
         ref={ref2}
-        className="min-h-screen mt-96 text-left text-xl"
+        className="ml-14 mt-10 text-left text-white"
         style={{
           transform: isInView2 ? "translateY(0)" : "translateY(20px)",
           opacity: isInView2 ? 1 : 0,
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
         }}
       >
-        <p>Here are my experiences:</p>
-        <ul>
-          <li>Codelab</li>
-          <li>AT&T</li>
-          <li>UnitedHealthCare Group / Optum</li>
-        </ul>
+        <p className = " text-6xl">Experience</p>
+        <ExperienceTimeline />
       </div>
 
       {/* Contact Section */}
