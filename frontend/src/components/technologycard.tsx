@@ -1,16 +1,21 @@
 import React from "react";
 
 interface TechnologyItemProp {
-  imageSrc: string; // Add this prop for the image source
+  icon: JSX.Element | null;
 }
 
-const TechnologyItem: React.FC<TechnologyItemProp> = ({ imageSrc }) => {
+const TechnologyItem: React.FC<TechnologyItemProp> = ({ icon }) => {
   return (
-    <div> 
+    <div>
       <div
-        style = {{ backgroundColor: '#15181C' }} 
-        className="w-14 rounded-lg flex flex-row items-center p-4 shadow-lg">
-        <img src={imageSrc} className="w-5 h-5"/>
+        style={{ backgroundColor: "#15181C" }}
+        className="w-24 h-24 rounded-lg flex flex-col items-center justify-center shadow-lg"
+      >
+        {icon ? (
+          <div className="pl-2 w-20 h-auto text-white">{icon}</div>
+        ) : (
+          <div className="text-white">{icon}</div> // Fallback when no icon is provided
+        )}
       </div>
     </div>
   );

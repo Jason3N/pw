@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="font-poppins bg-custom-background bg-cover bg-center min-h-screen">
+      <div className="font-poppins bg-custom-background">
         <HomePage />
       </div>
     </>

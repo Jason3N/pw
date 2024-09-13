@@ -5,6 +5,12 @@
   min-height: 100vh;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #22282E; /* Your preferred background color */
+}
+
 .custom-button {
   text-decoration: none; 
   transition: color 0.3s ease, text-decoration 0.3s ease; 
