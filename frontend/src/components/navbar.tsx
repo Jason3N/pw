@@ -1,27 +1,5 @@
 import { motion } from "framer-motion";
 
-
-const NavbarItem = (props: {text: string, targetId: string}) => {
-
-    const scrollToSection = () => {
-        const element = document.getElementById(props.targetId);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-        }
-    };
-
-    return (
-        <motion.div
-            initial={{ y: "0%", opacity: 0 }}
-            animate={{ y: "20%", opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="p-2"
-            >
-            <button style={{ color: '#ADBACA' }} onClick={scrollToSection}> {props.text} </button>
-        </motion.div>
-    );
-};
-
 const scrollToSection = (targetId: string) => {
     const element = document.getElementById(targetId);
     if (element) {

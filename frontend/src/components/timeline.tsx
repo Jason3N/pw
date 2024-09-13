@@ -1,5 +1,4 @@
-import React from "react";
-import { motion, useInView } from "framer-motion"; 
+import { motion } from "framer-motion"; 
 
 function ExperienceTimeline() {
   const experiences = [
