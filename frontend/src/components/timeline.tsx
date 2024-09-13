@@ -8,7 +8,7 @@ function ExperienceTimeline() {
         location: "Dallas, TX",
         description: "Leveraged Generative AI and embedded models, including GPT-32k, MiniLLM6 and Llama3 within the Digital Enhancement and AI team to comprehensively analyze reasons and pain points for over 10 million cancellation calls using transcript data.",
         date: "June 2024 - Aug 2024",
-        logo: "../public/companies/AT&T.png"
+        logo: "../companies/AT&T.png"
         },
         {
         company: "Volt (Codelab)",
@@ -16,7 +16,7 @@ function ExperienceTimeline() {
         location: "Remote",
         description: "Developed a full-stack web application to streamline the process of viewing data-metrics for enterprises using Volt. Made using React, FastAPI, and PostgresSQL.",
         date: "Sept 2023 - Dec 2023",
-        logo: "../public/companies/Volt.png"
+        logo: "../companies/Volt.png"
         },
         {
         company: "UnitedHealthCare Group",
@@ -24,7 +24,7 @@ function ExperienceTimeline() {
         location: "Irvine, CA",
         description: "Engineered a full-stack analytic dashboard to monitor and track incident tickets more effectively by location, team, and type using React, Python, Django, and PostgreSQL, saving an estimated 120 million in revenue from reduced downtime.",
         date: "Jun 2023 - August 2023",
-        logo: "../public/companies/UHG.png"
+        logo: "../companies/UHG.png"
         },  
         {
         company: "Playground (Codelab)",
@@ -32,7 +32,7 @@ function ExperienceTimeline() {
         location: "Davis, CA",
         description: "Operated within an AGILE framework with cross-functional teams to create and deploy 3 webpage tools on Framer for higher customer engagement using React, CSS, and HTML, resulting in over 500 interactions with HubSpot script.",
         date: "Jan 2023 - Jun 2023",
-        logo: "../public/companies/Playground Logo.jpeg"
+        logo: "../companies/Playground Logo.jpeg"
         },
         {
         company: "Codelab (for the AggieReview team)",

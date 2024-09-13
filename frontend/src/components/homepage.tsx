@@ -189,14 +189,14 @@ function HomePage(): JSX.Element {
             title="Volt"
             description="Created a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
             mediumArticle="https://codelabdavis.medium.com/volt-1dffc4ef911a"
-            imgSrc="../public/projects/volt_web.jpg"
+            imgSrc="../projects/volt_web.jpg"
           />
           <ProjectCard
             title="Playground"
             description="Engineered  a full-stack web application that allows users to find out information for their careplace."
             githubLink="https://github.com/Codelab-Davis/Playground"
             mediumArticle="https://codelabdavis.medium.com/playground-762b36da1806"
-            imgSrc="../public/projects/playground.png"
+            imgSrc="../projects/playground.png"
 
           />
           <ProjectCard
@@ -204,7 +204,7 @@ function HomePage(): JSX.Element {
             description="Mentored a full-stack mobile application that allows users to create, update, and delete their own passwords."
             githubLink="https://github.com/Codelab-Davis/password-manager"
             mediumArticle="https://codelabdavis.medium.com/passpal-9e46496ce71e"
-            imgSrc="../public/projects/passpal_web.jpg"
+            imgSrc="../projects/passpal_web.jpg"
           />
           <ProjectCard
             title="Davis Dining Commons"
@@ -216,7 +216,7 @@ function HomePage(): JSX.Element {
             description="Built a web platform for students to leave constructive, unbiased reviews of professors and courses."
             githubLink="https://github.com/Codelab-Davis/Professor-Rating-Platform"
             mediumArticle="https://codelabdavis.medium.com/aggiereview-54fe34440bbe"
-            imgSrc="../public/projects/aggiereview.png"
+            imgSrc="../projects/aggiereview.png"
           />
           <ProjectCard
             title="Boxdup"
