@@ -75,10 +75,12 @@ function HomePage() {
           <p className="font-bold mt-3 text-6xl">Jason Nguyen</p>
           <p style={{ color: "#ADBACA" }} className="mt-3 text-xs">
           </p>
+          <button className = "bg-white text-bold text-black text-xl mt-5 rounded-lg border-2 p-2">
+            Find out more about me!
+          </button>
         </div>
       </motion.div>
 
-      {/* About Me Section */}
       <div className="min-h-screen pt-16" ref={ref3}>
           <div
             className="font-semibold ml-14 mt-10 text-6xl text-left text-white"
@@ -122,44 +124,50 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Projects Section */}
+
           <div className="min-h-screen pt-16" ref={ref1}>
       <div
-        className="ml-14 mt-10 text-6xl text-left text-white"
+        className="font-poppins font-bold ml-14 mt-10 text-6xl text-left text-white"
         style={{
           transform: isInView1 ? "translateY(0)" : "translateY(20px)",
           opacity: isInView1 ? 1 : 0,
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
         }}
       >
-        Projects!
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        Projects
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
           <ProjectCard
             title="Volt"
-            description="Volt simplifies SMS management by wrapping multiple SaaS platforms like Twilio. We will create a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
+            description="Created a web dashboard to showcase users' costs over time, featuring summarized costs, trends, charts, and links to detailed analyses"
             mediumArticle="https://codelabdavis.medium.com/volt-1dffc4ef911a"
+            imgSrc="../public/projects/volt_web.jpg"
           />
           <ProjectCard
             title="Playground"
-            description="Playground is a full-stack web application that allows users to create, update, and delete their own playgrounds. Users can also view other users' playgrounds and like them."
+            description="Engineered  a full-stack web application that allows users to find out information for their careplace."
             githubLink="https://github.com/Codelab-Davis/Playground"
             mediumArticle="https://codelabdavis.medium.com/playground-762b36da1806"
+            imgSrc="../public/projects/playground.png"
+
           />
           <ProjectCard
             title="PassPal"
-            description="PassPal is a full-stack web application that allows users to create, update, and delete their own passwords. Users can also view other users' passwords and like them."
+            description="Mentored a full-stack mobile application that allows users to create, update, and delete their own passwords."
             githubLink="https://github.com/Codelab-Davis/password-manager"
             mediumArticle="https://codelabdavis.medium.com/passpal-9e46496ce71e"
+            imgSrc="../public/projects/passpal_web.jpg"
           />
           <ProjectCard
             title="Davis Dining Commons"
-            description="Davis Dining Commons is a full-stack web application that allows users to view the menu for the dining commons at UC Davis."
+            description="Built for HackDavis 2022, Davis Dining Commons is a full-stack web application that allows users to view the menu for the dining commons at UC Davis."
             githubLink="https://github.com/HansonKLau/DDC"
           />
           <ProjectCard
             title="AggieReview"
-            description="We built a web platform for students to leave constructive, unbiased reviews of professors and courses."
-            githubLink="https://github.com/HansonKLau/DDC"
+            description="Built a web platform for students to leave constructive, unbiased reviews of professors and courses."
+            githubLink="https://github.com/Codelab-Davis/Professor-Rating-Platform"
+            mediumArticle="https://codelabdavis.medium.com/aggiereview-54fe34440bbe"
+            imgSrc="../public/projects/aggiereview.png"
           />
           <ProjectCard
             title="Boxdup"
@@ -179,7 +187,7 @@ function HomePage() {
       {/* Experiences Section */}
       <div
         ref={ref2}
-        className="ml-14 mt-10 text-left text-white"
+        className="ml-14 mt-48 text-left text-white"
         style={{
           transform: isInView2 ? "translateY(0)" : "translateY(20px)",
           opacity: isInView2 ? 1 : 0,

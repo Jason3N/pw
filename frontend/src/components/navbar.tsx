@@ -43,7 +43,7 @@ const Navbar = () => {
                     transition={{ delay: 0.7 ,duration: 0.5 }}
                     className="p-2"
                     >
-                    <button style={{ color: '#ADBACA' }} > projects </button>
+                    <button className = "custom-button" style={{ color: '#ADBACA' }} > projects </button>
                 </motion.div>
                 <motion.div
                     initial={{ y: "0%", opacity: 0 }}
@@ -67,7 +67,7 @@ const Navbar = () => {
                     transition={{ delay: 1.2, duration: 0.5 }}
                     className="p-2"
                     >
-                    <button style={{ color: '#ADBACA' }} > resume </button>
+                    <a href = "" style={{ color: '#ADBACA' }} > resume </a>
                 </motion.div>
             </div>
         </div>

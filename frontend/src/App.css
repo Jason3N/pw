@@ -5,3 +5,12 @@
   min-height: 100vh;
 }
 
+.custom-button {
+  text-decoration: none; 
+  transition: color 0.3s ease, text-decoration 0.3s ease; 
+}
+
+.custom-button:hover {
+  color: #3490dc;
+  text-decoration: underline; 
+}
