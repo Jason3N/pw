@@ -18,6 +18,14 @@ function HomePage() {
   const [language, isLanguageInView] = useState(false);
   const [tools, isToolsInView] = useState(false);
 
+  const scrollToSection = (targetId: string) => {
+      const element = document.getElementById(targetId);
+      if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+      }
+  };
+
+
   const languagesAndFrameworks = [
     { name: "Java", image: "../public/java.svg" },
     { name: "Python", image: "../public/python.svg" },
@@ -68,19 +76,22 @@ function HomePage() {
         animate={{ x: "10%", opacity: 1 }}
         transition={{ delay : 1.5 , duration: 2 }}
       >
-        <div className="font-poppins text-white h-auto mt-72 mb-96 text-left">
+        <div className="font-poppins text-white h-auto pt-96 mb-96 text-left">
           <p style={{ color: "#ADBACA" }} className="font-medium text-4xl">
             Hello! My name is
           </p>
           <p className="font-bold mt-3 text-6xl">Jason Nguyen</p>
           <p style={{ color: "#ADBACA" }} className="mt-3 text-xs">
           </p>
-          <button className = "bg-white text-bold text-black text-xl mt-5 rounded-lg border-2 p-2">
+          <button className = "bg-white text-bold text-black text-xl mt-5 rounded-lg border-2 p-2"
+                  onClick={()=> scrollToSection('about-me')}>
             Find out more about me!
           </button>
         </div>
       </motion.div>
-
+      
+        {/* About Me Section */}
+      <div id = "about-me">
       <div className="min-h-screen pt-16" ref={ref3}>
           <div
             className="font-semibold ml-14 mt-10 text-6xl text-left text-white"
@@ -123,9 +134,9 @@ function HomePage() {
           </div>
         </div>
       </div>
+      </div>
 
-
-          <div className="min-h-screen pt-16" ref={ref1}>
+        <div id = "projects" className="min-h-screen pt-16" ref={ref1}>
       <div
         className="font-poppins font-bold ml-14 mt-10 text-6xl text-left text-white"
         style={{
@@ -182,9 +193,6 @@ function HomePage() {
         </div>
       </div>
     </div>
-
-
-      {/* Experiences Section */}
       <div
         ref={ref2}
         className="ml-14 mt-48 text-left text-white"
@@ -194,12 +202,14 @@ function HomePage() {
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
         }}
       >
-        <p className = " text-6xl">Experience</p>
+        <p         id = "experience"
+className = "font-bold text-6xl">Experience</p>
         <ExperienceTimeline />
       </div>
 
       {/* Contact Section */}
-      <div className="mt-96 text-left text-xl">
+      <div className="mt-96 text-left text-xl"
+          id = "contact">
         <p>Contact me at these links:</p>
         <ul>
           <li>LinkedIn</li>

@@ -32,7 +32,8 @@ function ExperienceTimeline() {
         title: "Software Engineer Intern",
         location: "Davis, CA",
         description: "Operated within an AGILE framework with cross-functional teams to create and deploy 3 webpage tools on Framer for higher customer engagement using React, CSS, and HTML, resulting in over 500 interactions with HubSpot script.",
-        date: "Jan 2023 - Jun 2023"
+        date: "Jan 2023 - Jun 2023",
+        logo: "../public/companies/Playground Logo.jpeg"
         },
         {
         company: "Codelab (for the AggieReview team)",
@@ -40,7 +41,6 @@ function ExperienceTimeline() {
         location: "Davis, CA",
         description: "We built a web platform for students to leave constructive, unbiased reviews of professors and courses.",
         date: "Jan 2023 - Jun 2023",
-        logo: "../public/projects/aggiereview.png"
         },
   ];
 
