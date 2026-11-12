@@ -2,7 +2,15 @@ import { motion } from "framer-motion";
 
 function ExperienceTimeline() {
   const experiences = [
-    {
+      {
+        company: "Capital One",
+        title: "Software Engineer",
+        location: "New York, NY",
+        description: "Core developer and maintainer of Capital One's EMP Pipelines platform, a Kubeflow-based ML infrastructure platform enabling teams to build, orchestrate, and deploy scalable ML and GenAI workflows in production.",
+        date: "Aug 2025 - Present",
+        logo: "../companies/Capital.png"
+        },
+        {
         company: "AT&T",
         title: "Software Engineer Intern",
         location: "Dallas, TX",

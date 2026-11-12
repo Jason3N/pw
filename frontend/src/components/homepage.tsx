@@ -12,7 +12,7 @@ import {
   SiJavascript,
   SiTypescript,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiMongodb,
   SiReact,
   SiNextdotjs,
@@ -27,7 +27,6 @@ import {
   SiAnaconda,
   SiInsomnia,
   SiPostman,
-  SiAzuredevops,
 } from "react-icons/si";
 import {
   FaJava,
@@ -40,6 +39,7 @@ import {
 import { FaGolang, FaLinkedin, FaDiscord } from "react-icons/fa6";
 import { TbFileTypeSql } from "react-icons/tb";
 import { DiVisualstudio } from "react-icons/di";
+import { VscAzureDevops } from "react-icons/vsc";
 import { MdMail } from "react-icons/md";
 
 function HomePage(): JSX.Element {
@@ -69,7 +69,7 @@ function HomePage(): JSX.Element {
     { name: "JavaScript", icon: <SiJavascript /> },
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "HTML", icon: <SiHtml5 /> },
-    { name: "CSS", icon: <SiCss3 /> },
+    { name: "CSS", icon: <SiCss /> },
     { name: "SQL", icon: <TbFileTypeSql /> },
     { name: "Golang", icon: <FaGolang /> },
     { name: "React", icon: <SiReact /> },
@@ -90,7 +90,7 @@ function HomePage(): JSX.Element {
     { name: "Docker", icon: <FaDocker /> },
     { name: "Jira", icon: <FaJira /> },
     { name: "AWS", icon: <FaAws /> },
-    { name: "Azure", icon: <SiAzuredevops /> },
+    { name: "Azure", icon: <VscAzureDevops /> },
     { name: "Snowflake", icon: <FaRegSnowflake /> },
     { name: "Databricks", icon: <SiDatabricks /> },
     { name: "Vercel", icon: <SiVercel /> },
@@ -101,23 +101,31 @@ function HomePage(): JSX.Element {
       <Navbar />
       <motion.div
         initial={{ x: "0%", opacity: 0 }}
-        animate={{ x: "10%", opacity: 1 }}
+        animate={{ x: "0%", opacity: 1 }}
         transition={{ delay: 1.5, duration: 2 }}
       >
-        <div className="font-poppins text-white h-auto pt-96 mb-96 text-left">
-          <p style={{ color: "#ADBACA" }} className="font-medium text-4xl">
-            Hello! My name is
-          </p>
-          <p className="font-bold mt-3 text-6xl">Jason Nguyen</p>
-          <button
-            className="bg-white font-bold text-black text-xl mt-5 rounded-lg border-2 pl-5 pr-5 pt-2 pb-2"
-            onClick={() => scrollToSection("about-me")}
-          >
-            Find out more about me!
-          </button>
+        <div className="flex min-h-screen flex-col items-center justify-center gap-12 px-6 py-24 lg:flex-row lg:gap-24 lg:px-16">
+          <div className="font-poppins text-center text-white lg:text-left">
+            <p style={{ color: "#ADBACA" }} className="font-medium text-4xl">
+              Hello! My name is
+            </p>
+            <p className="font-bold mt-3 text-6xl">Jason Nguyen</p>
+            <button
+              className="bg-white font-bold text-black text-xl mt-5 rounded-lg border-2 pl-5 pr-5 pt-2 pb-2"
+              onClick={() => scrollToSection("about-me")}
+            >
+              Find out more about me!
+            </button>
+          </div>
+          <div className="border-4 border-white bg-white rounded-lg shadow-md">
+             <img src="saltbread.png" width="500" height="500" alt="Jason Nguyen"
+             />
+             <p className = "px-10 text-center">
+              me eating saltbread
+             </p>
+          </div>
         </div>
       </motion.div>
-
       {/* About Me Section */}
       <div id="about-me">
         <div className="min-h-screen pt-16" ref={ref3}>
@@ -129,26 +137,27 @@ function HomePage(): JSX.Element {
               transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
             }}
           >
-            About Me!
+            About Me
             <div
               className="font-medium mt-10 w-full text-lg"
               style={{ color: "#ADBACA" }}
             >
-              <p className="mb-5">
-                Hi! I am currently a 4th year CS student at UC Davis! I just
-                finished up my work as a Software Engineer Intern at AT&amp;T where
-                I worked at the AT&amp;T Headquarters in Dallas, Texas.
-              </p>
-              <p className="mb-5">
+              <div className="flex">
+                <p className="w-3/5 mb-5 text-left text-3xl [word-spacing:0.5rem]">
+                  <span className="text-7xl"> Helloooo! </span> I am currently a Software Engineer working at Capital One working on the EMP Pipelines team!  
+                  I graduated UC Davis in 2025 where I studied Computer Science and did tons of work with my student-ran club called Codelab! (love you guys)
+                </p>
+                <img src="codelab.png" width="500" height="500" className="ml-12 border-4 border-white bg-white rounded-lg shadow-md"/>
+             </div>
+              <p className="w-3/5 ml-auto mr-12 text-right mt-36 text-3xl [word-spacing:0.5rem]">
                 I have extensive experience with creating applications and
                 products! Over the course of 4 years at my internships, clubs,
                 classes, and hackathons, I have created multiple products that
                 range from full-stack, ML models, and mobile applications.
               </p>
-              <p className="mb-5">
-                Outside of school and work, I love to stay fit! You'll find me
-                either running around my neighborhood at midnight, lifting
-                weights at the gym, or in the pool swimming some laps!
+              <p className="w-3/5 mt-36 text-left text-3xl [word-spacing:0.5rem]">
+                Outside of school and work, I love to play video games, finance, cooking, and staying fit! 
+                You'll find me playing tennis, cooking at a barbecue, or in the pool swimming some laps!
               </p>
             </div>
             <div className="mt-10 flex flex-col">

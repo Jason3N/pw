@@ -55,6 +55,14 @@ const Navbar = () => {
                     >
                     <a href = "" style={{ color: '#ADBACA' }} > resume </a>
                 </motion.div>
+                <motion.div
+                    initial={{ y: "0%", opacity: 0 }}
+                    animate={{ y: "20%", opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
+                    className="p-2"
+                    >
+                    <a href = "" style={{ color: '#ADBACA' }} > thoughts </a>
+                </motion.div>
             </div>
         </div>
     );
