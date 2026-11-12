@@ -5,7 +5,7 @@ import ExperienceTimeline from "./timeline";
 import Gallery from "./gallery";
 import {
   SiDatabricks, SiPython, SiCplusplus, SiJavascript, SiTypescript,
-  SiHtml5, SiCss, SiMongodb, SiReact, SiNextdotjs, SiNodedotjs,
+  SiHtml5, SiCssmodules, SiMongodb, SiReact, SiNextdotjs, SiNodedotjs,
   SiDjango, SiFastapi, SiSpringboot, SiPostgresql, SiDart,
   SiFlutter, SiVercel, SiAnaconda, SiInsomnia, SiPostman,
 } from "react-icons/si";
@@ -26,7 +26,7 @@ const technologyGroups = [
       { name: "JavaScript", icon: <SiJavascript /> },
       { name: "TypeScript", icon: <SiTypescript /> },
       { name: "HTML", icon: <SiHtml5 /> },
-      { name: "CSS", icon: <SiCss /> },
+      { name: "CSS", icon: <SiCssmodules /> },
       { name: "SQL", icon: <TbFileTypeSql /> },
       { name: "Go", icon: <FaGolang /> },
       { name: "Dart", icon: <SiDart /> },
