@@ -1,5 +1,5 @@
-// ProjectItem.tsx
-import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 
 interface ProjectItemProps {
   title: string;
@@ -7,47 +7,48 @@ interface ProjectItemProps {
   githubLink?: string;
   mediumArticle?: string;
   imgSrc?: string;
+  category?: string;
+  tags?: string[];
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ imgSrc, mediumArticle, githubLink, title, description }) => {
-  return (
-    <div
-    style={{ backgroundColor: "#15181C" }}
-    className="font-medium m-10 rounded-lg shadow-lg h-full flex flex-col"
-  >
-    <div className="text-2xl p-5 flex flex-row items-stretch flex-grow">
-      {imgSrc && (
-        <img
-          src={imgSrc}
-          alt={`${title} project image`}
-          className="w-96 h-full object-cover mr-5 rounded-lg"
-        />
+const ProjectItem = ({
+  imgSrc,
+  mediumArticle,
+  githubLink,
+  title,
+  description,
+  category,
+  tags = [],
+}: ProjectItemProps) => (
+  <article className={imgSrc ? "project-card" : "project-card project-card-compact"}>
+    {imgSrc && (
+      <div className="project-preview">
+        <img src={imgSrc} alt={`${title} application preview`} loading="lazy" width="960" height="600" />
+      </div>
+    )}
+    <div className="project-content">
+      {category && <p className="eyebrow">{category}</p>}
+      <h3>{title}</h3>
+      <p className="project-description">{description}</p>
+      {tags.length > 0 && (
+        <ul className="project-tags" aria-label="Project technologies">
+          {tags.map((tag) => <li key={tag}>{tag}</li>)}
+        </ul>
       )}
-      <div className="flex flex-col flex-grow">
-        <h3 className="font-bold text-white mb-2">{title}</h3>
-        <p className="text-sm mb-4 flex-grow">{description}</p>
-        <div className="flex space-x-4">
-          {githubLink && (
-            <a
-              className="rounded-lg p-1 text-xs text-blue-300"
-              href={githubLink}
-            >
-              GitHub Link
-            </a>
-          )}
-          {mediumArticle && (
-            <a
-              className="rounded-lg p-1 text-xs text-blue-300"
-              href={mediumArticle}
-            >
-              Medium Article
-            </a>
-          )}
-        </div>
+      <div className="project-links">
+        {mediumArticle && (
+          <a href={mediumArticle} target="_blank" rel="noreferrer" aria-label={`Read the ${title} case study`}>
+            Read the Medium Article <FiArrowUpRight aria-hidden="true" />
+          </a>
+        )}
+        {githubLink && (
+          <a href={githubLink} target="_blank" rel="noreferrer" aria-label={`View ${title} on GitHub`}>
+            <FaGithub aria-hidden="true" /> Code <FiArrowUpRight aria-hidden="true" />
+          </a>
+        )}
       </div>
     </div>
-  </div>
-  );
-};
+  </article>
+);
 
 export default ProjectItem;

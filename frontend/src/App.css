@@ -1,14 +1,25 @@
 .bg-custom-background {
-  background-color: #22282E; /* Custom background color */
-  background-size: cover;
-  background-position: center;
+  background-color: #1c2025;
+  background-image:
+    radial-gradient(ellipse at 75% 3%, rgba(255, 255, 255, 0.035), transparent 38rem);
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #22282E; /* Your preferred background color */
+  background-color: #1c2025;
+}
+
+.timeline-rail {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.75) 8%, rgba(255, 255, 255, 0.28) 88%, transparent);
+}
+
+.logo-tile {
+  min-width: 7rem;
 }
 
 .custom-button {
@@ -19,4 +30,54 @@ body {
 .custom-button:hover {
   color: #3490dc;
   text-decoration: underline; 
+}
+
+.thoughts-section {
+  color: #f7fbff;
+  margin: 10rem auto 0;
+  max-width: 1180px;
+  padding: 5.5rem 2rem;
+}
+
+.thoughts-heading { max-width: 43rem; }
+.thoughts-eyebrow { color: #75e6da; font-size: .75rem; font-weight: 700; letter-spacing: .16em; margin: 0 0 .55rem; }
+.thoughts-heading h2 { font-size: clamp(3rem, 6vw, 5rem); line-height: .95; margin: 0; }
+.thoughts-heading > p:last-child { color: #adbaca; font-size: 1.15rem; line-height: 1.7; margin-top: 1.2rem; }
+.thoughts-workspace { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr) 19rem; margin-top: 2.75rem; }
+.thought-composer, .publish-panel, .thought-card, .empty-thoughts { background: rgba(21, 24, 28, .72); border: 1px solid rgba(173, 186, 202, .2); border-radius: 1rem; box-shadow: 0 18px 45px rgba(0, 0, 0, .16); }
+.thought-composer { padding: 1.5rem; }
+.thought-composer-title { align-items: start; display: flex; gap: 1rem; justify-content: space-between; }
+.thought-composer h3, .publish-panel h3, .published-title h3 { font-size: 1.35rem; margin: 0; }
+.thought-composer label:not(.upload-text), .snippet-fields label { color: #dce6f2; display: block; font-size: .85rem; font-weight: 600; margin-top: 1.1rem; }
+.thought-composer input, .thought-composer textarea, .publish-panel select { background: #101317; border: 1px solid #3a4654; border-radius: .55rem; box-sizing: border-box; color: #f7fbff; display: block; font: inherit; margin-top: .45rem; padding: .75rem .85rem; width: 100%; }
+.thought-composer textarea { line-height: 1.55; resize: vertical; }
+.thought-composer input:focus, .thought-composer textarea:focus, .publish-panel select:focus { border-color: #75e6da; outline: 2px solid rgba(117, 230, 218, .18); }
+.upload-text { border: 1px solid #4d6570; border-radius: 99px; color: #bdeee9; cursor: pointer; font-size: .85rem; padding: .5rem .8rem; white-space: nowrap; }
+.upload-text input { display: none; }
+.snippet-fields { display: grid; gap: 1rem; grid-template-columns: 11rem 1fr; }
+.code-input, .thought-code-block pre { font-family: "SFMono-Regular", Consolas, monospace !important; font-size: .85rem !important; }
+.save-draft, .publish-button { background: #75e6da; border: 0; border-radius: .55rem; color: #102024; cursor: pointer; font: inherit; font-weight: 700; margin-top: 1.35rem; padding: .78rem 1rem; }
+.publish-panel { align-self: start; padding: 1.5rem; position: sticky; top: 5.5rem; }
+.publish-help, .draft-count { color: #adbaca; font-size: .9rem; line-height: 1.55; }
+.publish-panel select { margin-top: 1.2rem; }
+.publish-button { width: 100%; }
+.publish-button:disabled { background: #50606b; color: #b7c1c9; cursor: not-allowed; }
+.draft-count { border-top: 1px solid rgba(173, 186, 202, .18); margin: 1.2rem 0 0; padding-top: 1rem; }
+.published-thoughts { margin-top: 4rem; }
+.published-title { align-items: end; display: flex; justify-content: space-between; margin-bottom: 1.25rem; }
+.thought-card { margin-top: 1rem; padding: 1.5rem; }
+.thought-card-meta { color: #8fa1b4; display: flex; flex-wrap: wrap; font-size: .78rem; gap: 1rem; letter-spacing: .04em; text-transform: uppercase; }
+.thought-card h4 { font-size: 1.55rem; margin: .8rem 0; }
+.thought-card > p { color: #d5dee8; line-height: 1.7; white-space: pre-wrap; }
+.thought-code-block { background: #0e1115; border: 1px solid #303a46; border-radius: .7rem; margin-top: 1.25rem; overflow: hidden; }
+.thought-code-header { align-items: center; border-bottom: 1px solid #303a46; color: #a9bbc9; display: flex; font-family: monospace; font-size: .78rem; justify-content: space-between; padding: .55rem .75rem; }
+.thought-code-header button { background: transparent; border: 0; color: #75e6da; cursor: pointer; font: inherit; }
+.thought-code-block pre { margin: 0; overflow-x: auto; padding: 1rem; }
+.empty-thoughts { color: #adbaca; padding: 1.25rem 1.5rem; }
+
+@media (max-width: 760px) {
+  .thoughts-section { margin-top: 4rem; padding: 4rem 1.1rem; }
+  .thoughts-workspace, .snippet-fields { grid-template-columns: 1fr; }
+  .publish-panel { position: static; }
+  .thought-composer-title { flex-direction: column; }
 }

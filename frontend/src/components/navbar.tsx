@@ -1,63 +1,77 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 
-const scrollToSection = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-    }
-};
+const sections = [
+  { id: "about-me", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
 
 const Navbar = () => {
-    return (
-        <div style={{ backgroundColor: '#15181C' }} 
-        className="h-16 fixed top-0 w-full z-50">            
-        <div className = "justify-center text-xl flex flex-row space-x-10">
-                <motion.div
-                    initial={{ y: "0%", opacity: 0 }}
-                    animate={{ y: "20%", opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                    className="p-2 shadow-lg"
-                    >
-                    <button style={{ color: '#ADBACA' }} onClick={() => scrollToSection('about-me')}> about me </button>
-                </motion.div>
-                <motion.div
-                    initial={{ y: "0%", opacity: 0 }}
-                    animate={{ y: "20%", opacity: 1 }}
-                    transition={{ delay: 0.7 ,duration: 0.5 }}
-                    className="p-2"
-                    >
-                    <button className = "custom-button" style={{ color: '#ADBACA' }} 
-                    onClick={() => scrollToSection('projects')}> projects </button>
-                </motion.div>
-                <motion.div
-                    initial={{ y: "0%", opacity: 0 }}
-                    animate={{ y: "20%", opacity: 1 }}
-                    transition={{ delay: 0.9, duration: 0.5 }}
-                    className="p-2"
-                    >
-                    <button style={{ color: '#ADBACA' }} 
-                    onClick={() => scrollToSection('experience')}> experience </button>
-                </motion.div>
-                <motion.div
-                    initial={{ y: "0%", opacity: 0 }}
-                    animate={{ y: "20%", opacity: 1 }}
-                    transition={{ delay: 1.1, duration: 0.5 }}
-                    className="p-2"
-                    >
-                    <button style={{ color: '#ADBACA' }} 
-                    onClick={() => scrollToSection('contact')}> contact me </button>
-                </motion.div>
-                <motion.div
-                    initial={{ y: "0%", opacity: 0 }}
-                    animate={{ y: "20%", opacity: 1 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
-                    className="p-2"
-                    >
-                    <a href = "" style={{ color: '#ADBACA' }} > resume </a>
-                </motion.div>
-            </div>
-        </div>
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -60% 0px" },
     );
+    ["home", ...sections.map((section) => section.id)].forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && isOpen) {
+          setIsOpen(false);
+          toggleRef.current?.focus();
+        }
+      }}
+    >
+      <div className="site-container nav-layout">
+        <a className="wordmark" href="#home" aria-label="Jason Nguyen, home" onClick={() => setIsOpen(false)}>
+          jason nguyen
+        </a>
+        <button
+          ref={toggleRef}
+          type="button"
+          className="menu-toggle"
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+        </button>
+        <nav id="primary-navigation" aria-label="Main navigation" className={isOpen ? "site-nav is-open" : "site-nav"}>
+          {sections.map((section) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              aria-current={activeSection === section.id ? "location" : undefined}
+              onClick={() => setIsOpen(false)}
+            >
+              {section.label}
+            </a>
+          ))}
+          <a className="nav-github" href="https://github.com/Jason3N" target="_blank" rel="noreferrer">
+            GitHub <FiArrowUpRight aria-hidden="true" />
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;

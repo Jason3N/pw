@@ -1,4 +1,5 @@
 import './App.css'
+import './portfolio.css'
 import HomePage from './components/homepage';
 
 function App() {
