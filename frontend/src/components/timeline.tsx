@@ -1,5 +1,3 @@
-import { motion } from "framer-motion"; 
-
 function ExperienceTimeline() {
   const experiences = [
       {
@@ -8,7 +6,7 @@ function ExperienceTimeline() {
         location: "New York, NY",
         description: "Core developer and maintainer of Capital One's EMP Pipelines platform, a Kubeflow-based ML infrastructure platform enabling teams to build, orchestrate, and deploy scalable ML and GenAI workflows in production.",
         date: "Aug 2025 - Present",
-        logo: "../companies/Capital.png"
+        logo: "/companies/Capital.png"
         },
         {
         company: "AT&T",
@@ -16,7 +14,7 @@ function ExperienceTimeline() {
         location: "Dallas, TX",
         description: "Leveraged Generative AI and embedded models, including GPT-32k, MiniLLM6 and Llama3 within the Digital Enhancement and AI team to comprehensively analyze reasons and pain points for over 10 million cancellation calls using transcript data.",
         date: "June 2024 - Aug 2024",
-        logo: "../companies/AT&T.png"
+        logo: "/companies/AT&T.png"
         },
         {
         company: "Volt (Codelab)",
@@ -24,7 +22,7 @@ function ExperienceTimeline() {
         location: "Remote",
         description: "Developed a full-stack web application to streamline the process of viewing data-metrics for enterprises using Volt. Made using React, FastAPI, and PostgresSQL.",
         date: "Sept 2023 - Dec 2023",
-        logo: "../companies/Volt.png"
+        logo: "/companies/Volt.png"
         },
         {
         company: "UnitedHealthCare Group",
@@ -32,7 +30,7 @@ function ExperienceTimeline() {
         location: "Irvine, CA",
         description: "Engineered a full-stack analytic dashboard to monitor and track incident tickets more effectively by location, team, and type using React, Python, Django, and PostgreSQL, saving an estimated 120 million in revenue from reduced downtime.",
         date: "Jun 2023 - August 2023",
-        logo: "../companies/UHG.png"
+        logo: "/companies/UHG.png"
         },  
         {
         company: "Playground (Codelab)",
@@ -40,7 +38,7 @@ function ExperienceTimeline() {
         location: "Davis, CA",
         description: "Operated within an AGILE framework with cross-functional teams to create and deploy 3 webpage tools on Framer for higher customer engagement using React, CSS, and HTML, resulting in over 500 interactions with HubSpot script.",
         date: "Jan 2023 - Jun 2023",
-        logo: "../companies/Playground Logo.jpeg"
+        logo: "/companies/Playground Logo.jpeg"
         },
         {
         company: "Codelab (for the AggieReview team)",
@@ -52,40 +50,31 @@ function ExperienceTimeline() {
   ];
 
   return (
-    <div className="font-poppins min-h-screen py-16 flex flex-col items-center">
-      <div className="relative w-full max-w-5xl">
-        <div className="absolute h-full border-l-2"></div>
-
-        {/* Experience entries */}
-        {experiences.map((exp, index) => (
-          <motion.div key={index} 
-                      className="text-left mb-40 flex items-center w-full"
-                      initial={{ opacity: 0, y: 20 }} 
-                      whileInView={{ opacity: 1, y: 0 }} 
-                      transition={{ duration: 0.8, delay: index * 0.2 }} 
-                      viewport={{ once: true }} 
-          >
-
-              <div className="-ml-10 w-1/12 flex justify-center relative">
-                <div className="bg-white p-3 rounded-full shadow-lg"></div>
+    <ol className="experience-list" aria-label="Work experience, most recent first">
+      {experiences.map((exp, index) => (
+        <li className="experience-entry" key={`${exp.company}-${exp.date}`}>
+          <div className="experience-date">
+            <p>{exp.date}</p>
+            {index === 0 && <span className="current-role">Current role</span>}
+          </div>
+          <article className="experience-card">
+            <div className="experience-heading">
+              <div>
+                <h3>{exp.company}</h3>
+                <p className="experience-role">{exp.title}</p>
+                <p className="experience-location">{exp.location}</p>
               </div>
-
-                <div className="w-10/12 p-4 rounded-lg shadow-lg"
-                     style = {{ backgroundColor: '#15181C' }} 
-                  >
-                  <div className = "flex flex-row justify-between">
-                  <p className="text-4xl font-bold text-white mb-5">{exp.company}</p>
-                  <img className="justify-self-end w-10 h-auto max-w-full max-h-10 object-contain" src={exp.logo} />
-                  </div>
-                  <p className="text-xs font-light text-gray-400">{exp.title}</p>
-                  <p className="text-xs font-light text-gray-400">{exp.location}</p>
-                  <p className="text-xl text-white mt-4">{exp.description}</p>
-                  <p className="text-xs font-light text-gray-400 mt-2">{exp.date}</p>
+              {exp.logo && (
+                <div className="company-logo">
+                  <img src={exp.logo} alt={`${exp.company} logo`} loading="lazy" />
                 </div>
-              </motion.div>
-        ))}
-      </div>
-    </div>
+              )}
+            </div>
+            <p className="experience-description">{exp.description}</p>
+          </article>
+        </li>
+      ))}
+    </ol>
   );
 }
 
